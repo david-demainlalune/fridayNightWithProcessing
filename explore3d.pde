@@ -4,19 +4,19 @@ CylinderWithStrips quadStripCylinder;
 CylinderWithQuads quadCylinder;
 
 void setup() {
-	size(int(displayWidth * 0.85), int(displayHeight * 0.85), P3D);
-	smooth();
-  	plane = new VertexColorPlane();
+    size(int(displayWidth * 0.85), int(displayHeight * 0.85), P3D);
+    smooth();
+    plane = new VertexColorPlane();
     quadStripCylinder = new CylinderWithStrips(12, 4);
     quadCylinder = new CylinderWithQuads(12, 4);
 }
 
 void drawPlane(){
-	pushMatrix();
-	translate( width / 2, height * 0.3, 0);
-	scale(200);
+    pushMatrix();
+    translate( width / 2, height * 0.3, 0);
+    scale(200);
     plane.display();
-	popMatrix();
+    popMatrix();
 }
 
 void drawRotatingCylinder(Displayable cylinder, PVector where){
@@ -36,7 +36,7 @@ void draw() {
     pointLight(255, 255, 255, 0, 10, 50);
     lights();
     
-	drawPlane();
+    drawPlane();
     drawRotatingCylinder(quadCylinder, new PVector(width * 0.4, height / 2, 0));
     drawRotatingCylinder(quadStripCylinder, new PVector(width * 0.6, height / 2, 0));
 }
